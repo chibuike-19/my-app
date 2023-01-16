@@ -1,10 +1,11 @@
 
-const UserSignIn = () => {
-
+const PageLoading = () => {
+    
     return(
         <div>
             
         </div>
     )
 }
-export default UserSignIn
+
+export default PageLoading

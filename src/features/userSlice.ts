@@ -5,7 +5,7 @@ const initialValue: UserType = {
     name:'',
     email:'',
     uid:'',
-    adminLoggedIn:false
+    userLoggedIn:false
 }
 export const UserSlice = createSlice({
     name:'admin',

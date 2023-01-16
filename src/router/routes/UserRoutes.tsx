@@ -3,7 +3,7 @@ import UserSignIn from "../../pages/UserSignIn";
 
 const UserRoutes = [
     {
-        path: '',
+        path: '/user',
         component: UserSignIn,
         meta: {
             redirectUrl:'/sign-up',

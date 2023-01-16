@@ -3,7 +3,7 @@ const PageLoading = () => {
     
     return(
         <div>
-            
+            <div>Loading....</div>
         </div>
     )
 }

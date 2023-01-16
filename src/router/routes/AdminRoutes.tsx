@@ -3,12 +3,21 @@ import AdminSignIn from "../../pages/AdminSignIn";
 
 const AdminRoutes = [
     {
-        path: '',
+        path: "",
         component: AdminSignIn,
         meta: {
             redirectUrl:'/sign-up',
+            protectedRoute: true,
+            role: 'admin'
+        }
+    },
+    {
+        path: '/sign-up',
+        component: AdminSignIn,
+        meta: {
+            redirectUrl: '/sign-up',
             protectedRoute: false,
-            role: 'Admin'
+            role: 'admin'
         }
     }
 ]

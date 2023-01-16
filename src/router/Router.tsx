@@ -15,18 +15,53 @@ const Router = () => {
     return(
         <BrowserRouter>
             <Routes>
-                {customRoute.map((route) => {
-                    if(route.meta.protectedRoute && route.meta.role === 'user' && userLoggedIn){
-                        return <Route key={route.path} path={route.path} element={<route.component/>}/>
-                    }
-                    if(route.meta.protectedRoute && route.meta.role === 'admin' && adminLoggedIn){
-                        return <Route key={route.path} path={route.path} element={<route.component/>}/>
-                    }
-                    if(route.meta.protectedRoute && !userLoggedIn || !adminLoggedIn){
-                        return <Route key={route.path} element={<Redirect redirectUrl={route.meta.redirectUrl}/>}/>
-                    }
-                    return <Route key={route.path} path={route.path} element={<route.component/>}/>
-                })}
+            {customRoute.map((route) => {
+          if (
+            route.meta.protectedRoute &&
+            route.meta.role === "user" &&
+            userLoggedIn
+          ) {
+            return (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={<route.component />}
+              />
+            );
+          }
+
+          if (
+            route.meta.protectedRoute &&
+            route.meta.role === "admin" &&
+            adminLoggedIn
+          ) {
+            return (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={<route.component />}
+              />
+            );
+          }
+
+          if (route.meta.protectedRoute && (!userLoggedIn || !adminLoggedIn)) {
+            return (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={<Redirect redirectUrl={route.meta.redirectUrl} />}
+              />
+            );
+          }
+
+          return (
+            <Route
+              key={route.path}
+              path={route.path}
+              element={<route.component />}
+            />
+          );
+        })}
 
             </Routes>
         </BrowserRouter>
